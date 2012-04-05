@@ -3,7 +3,7 @@ out something smarter.
 
 To get single files manually:
 
-wget https://github.com/mattkelly/dotfiles/raw/master/<filename>
+wget https://github.com/mattkelly/dotfiles/raw/master/FILENAME
 
 e.g. to get my vimrc:
 
