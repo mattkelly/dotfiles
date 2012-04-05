@@ -1,41 +1,12 @@
-# History
-HISTFILE=~/.zsh_history
-HISTSIZE=4096
-SAVEHIST=4096
-# Multiple zsh instances share history file
-setopt append_history
-
-# Some lines from zsh-newuser-install
-setopt autocd extendedglob notify
-unsetopt beep
-bindkey -e
-# End of lines configured by zsh-newuser-install
-
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# Tab completion from both ends
-setopt completeinword
-
-# Prompt
-autoload -U colors && colors
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-
-# Better completion for killall
-zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
-
-# Environment variables
-export EDITOR='vim'
-export VISUAL='vim'
-
-# Global aliases - can appear anywhere on command line
+# ---------------------------
+# Global aliases
+# ---------------------------
 alias -g '...'='../..'
 alias -g 'CLR'='--color=auto'
 
+# ---------------------------
 # Normal aliases
+# ---------------------------
 alias l='ls -F CLR'
 alias ls='ls -F CLR'
 alias ll='ls -lF CLR'
@@ -55,7 +26,56 @@ alias rd='rmdir'
 
 alias grep='grep CLR'
 
+# ---------------------------
+# History
+# ---------------------------
+HISTFILE=~/.zsh_history
+HISTSIZE=4096
+SAVEHIST=4096
+# Multiple zsh instances share history file
+setopt append_history
+
+# ---------------------------
+# Options 
+# ---------------------------
+setopt autocd 
+setopt extendedglob 
+setopt notify
+# Tab completion from both ends
+setopt completeinword
+# Don't beep
+unsetopt beep
+
+# Better completion for killall
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+
+# Vim keybindings, not emacs!
+bindkey -v
+
+# ---------------------------
+# Prompt
+# ---------------------------
+autoload -U colors && colors
+PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+
+# ---------------------------
+# Environment variables
+# ---------------------------
+# TODO move these to zprofile
+export EDITOR='vim'
+export VISUAL='vim'
+
+# ---------------------------
 # ls colors
+# ---------------------------
 if [[ -x "`whence -p dircolors`" ]]; then
   eval `dircolors`
 fi
+
+# ---------------------------
+# From compinstall 
+# ---------------------------
+zstyle :compinstall filename '~/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
