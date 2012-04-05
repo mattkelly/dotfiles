@@ -1,14 +1,18 @@
-# Lines configured by zsh-newuser-install
+# History
 HISTFILE=~/.zsh_history
 HISTSIZE=4096
 SAVEHIST=4096
+# Multiple zsh instances share history file
+setopt append_history
+
+# Some lines from zsh-newuser-install
 setopt autocd extendedglob notify
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/matt/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -20,14 +24,6 @@ setopt completeinword
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
-# ls colors
-if [[ -x "`whence -p dircolors`" ]]; then
-  eval `dircolors`
-  alias ls='ls -F --color=auto'
-else
-  alias ls='ls -F'
-fi
-
 # Better completion for killall
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
@@ -35,12 +31,17 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 export EDITOR='vim'
 export VISUAL='vim'
 
-# Aliases
-alias l='ls -f'
-alias ls='ls -f'
-alias ll='ls -lf'
-alias la='ls -af'
-alias ltr='ls -ltrf'
+# Global aliases - can appear anywhere on command line
+alias -g '...'='../..'
+alias -g 'CLR'='--color=auto'
+
+# Normal aliases
+alias l='ls -F CLR'
+alias ls='ls -F CLR'
+alias ll='ls -lF CLR'
+alias la='ls -laF CLR'
+alias ltr='ls -ltrF CLR'
+alias lm='ls -alF CLR'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -51,3 +52,10 @@ alias h='history'
 
 alias md='mkdir'
 alias rd='rmdir'
+
+alias grep='grep CLR'
+
+# ls colors
+if [[ -x "`whence -p dircolors`" ]]; then
+  eval `dircolors`
+fi
