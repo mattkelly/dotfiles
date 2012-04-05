@@ -1,2 +1,10 @@
 For now, manually create soft links to this dir until I figure
 out something smarter.
+
+To get single files manually:
+
+wget https://github.com/mattkelly/dotfiles/raw/master/<filename>
+
+e.g. to get my vimrc:
+
+wget https://github.com/mattkelly/dotfiles/raw/master/vim/vimrc
