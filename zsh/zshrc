@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=4096
 SAVEHIST=4096
 setopt autocd extendedglob notify
@@ -9,7 +9,6 @@ bindkey -e
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/matt/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -21,21 +20,6 @@ setopt completeinword
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
-# Aliases
-alias rm='rm -i'
-
-alias l='ls -F'
-alias ls='ls -F'
-alias ll='ls -lF'
-alias la='ls -aF'
-alias ltr='ls -ltrF'
-
-alias c='clear'
-alias h='history'
-
-alias md='mkdir'
-alias rd='rmdir'
-
 # ls colors
 if [[ -x "`whence -p dircolors`" ]]; then
   eval `dircolors`
@@ -46,3 +30,24 @@ fi
 
 # Better completion for killall
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+
+# Environment variables
+export EDITOR='vim'
+export VISUAL='vim'
+
+# Aliases
+alias l='ls -f'
+alias ls='ls -f'
+alias ll='ls -lf'
+alias la='ls -af'
+alias ltr='ls -ltrf'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias c='clear'
+alias h='history'
+
+alias md='mkdir'
+alias rd='rmdir'
