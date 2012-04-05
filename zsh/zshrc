@@ -5,7 +5,7 @@ alias -g '...'='../..'
 alias -g 'CLR'='--color=auto'
 
 # ---------------------------
-# Normal aliases
+# Command aliases
 # ---------------------------
 alias l='ls -F CLR'
 alias ls='ls -F CLR'
@@ -34,10 +34,13 @@ HISTSIZE=4096
 SAVEHIST=4096
 # Multiple zsh instances share history file
 setopt append_history
+# Don't save history for immediately repeated commands
+setopt histignoredups
 
 # ---------------------------
-# Options 
+# Miscellaneous options 
 # ---------------------------
+# Automatically cd to dir given on command line, e.g. % /etc
 setopt autocd 
 setopt extendedglob 
 setopt notify
