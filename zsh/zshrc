@@ -1,0 +1,48 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=4096
+SAVEHIST=4096
+setopt autocd extendedglob notify
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/matt/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Tab completion from both ends
+setopt completeinword
+
+# Prompt
+autoload -U colors && colors
+PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
+
+# Aliases
+alias rm='rm -i'
+
+alias l='ls -F'
+alias ls='ls -F'
+alias ll='ls -lF'
+alias la='ls -aF'
+alias ltr='ls -ltrF'
+
+alias c='clear'
+alias h='history'
+
+alias md='mkdir'
+alias rd='rmdir'
+
+# ls colors
+if [[ -x "`whence -p dircolors`" ]]; then
+  eval `dircolors`
+  alias ls='ls -F --color=auto'
+else
+  alias ls='ls -F'
+fi
+
+# Better completion for killall
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
