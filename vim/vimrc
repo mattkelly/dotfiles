@@ -34,6 +34,8 @@ set shiftwidth=4
 imap jj <Esc> 
 " :W<CR> to :w<CR> since I can't seem to hit :w accurately
 cnoreabbrev W w
+" :Q<CR> to :q<CR> since I can't seem to hit :q accurately either...
+cnoreabbrev Q q
 
 " ---------------------
 " SYNTAX HIGHLIGHTING 
