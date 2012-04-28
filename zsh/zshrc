@@ -52,8 +52,8 @@ unsetopt beep
 # Better completion for killall
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
-# Vim keybindings, not emacs!
-bindkey -v
+# Emacs keybindings, to be closer to bash 
+bindkey -e
 
 # Display CPU usage stats for commands taking more than 10 seconds
 REPORTTIME=10
