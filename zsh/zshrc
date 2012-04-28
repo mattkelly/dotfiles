@@ -2,17 +2,17 @@
 # Global aliases
 # ---------------------------
 alias -g '...'='../..'
-alias -g 'CLR'='--color=auto'
+alias -g 'COLOR'='--color=auto'
 
 # ---------------------------
 # Command aliases
 # ---------------------------
-alias l='ls -F CLR'
-alias ls='ls -F CLR'
-alias ll='ls -lF CLR'
-alias la='ls -laF CLR'
-alias ltr='ls -ltrF CLR'
-alias lm='ls -alF CLR'
+alias l='ls -F COLOR'
+alias ls='ls -F COLOR'
+alias ll='ls -lF COLOR'
+alias la='ls -laF COLOR'
+alias ltr='ls -ltrF COLOR'
+alias lm='ls -alF COLOR'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -24,7 +24,7 @@ alias h='history'
 alias md='mkdir'
 alias rd='rmdir'
 
-alias grep='grep CLR'
+alias grep='grep COLOR'
 
 # ---------------------------
 # History
@@ -54,6 +54,9 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 # Vim keybindings, not emacs!
 bindkey -v
+
+# Display CPU usage stats for commands taking more than 10 seconds
+REPORTTIME=10
 
 # ---------------------------
 # Prompt
