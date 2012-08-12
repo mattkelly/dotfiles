@@ -65,3 +65,5 @@ endif
 " No sound on errors, visual bell instead
 set noerrorbells
 set visualbell
+" Split new window to right instead of left when :split is used
+set splitright
