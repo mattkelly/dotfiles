@@ -13,7 +13,7 @@ case $(uname -s) in
         alias ls='ls -F COLOR'
         alias ll='ls -lF COLOR'
         alias la='ls -laF COLOR'
-        alias ltr='ls -ltrF COLOR'
+        alias ltr='ls -ltrFh COLOR'
         alias lm='ls -alF COLOR'
     ;;
     Darwin)
@@ -22,7 +22,7 @@ case $(uname -s) in
         alias ls='ls -FG'
         alias ll='ls -l -FG'
         alias la='ls -la -FG'
-        alias ltr='ls -ltr -FG'
+        alias ltr='ls -ltrh -FG'
         alias lm='ls -al -FG'
     ;;
     *)
@@ -94,10 +94,3 @@ if [[ -x "`whence -p dircolors`" ]]; then
   eval `dircolors`
 fi
 
-# ---------------------------
-# From compinstall 
-# ---------------------------
-zstyle :compinstall filename '~/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
