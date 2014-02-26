@@ -26,7 +26,8 @@ retab
 " Set number of spaces for indentation
 set shiftwidth=4
 " Set tab width to 2 for Python, HTML, CSS only
-au FileType python,html,css setl sw=2 sts=2 et
+"au FileType python,html,css setl sw=2 sts=2 et
+au FileType html,css setl sw=2 sts=2 et
 
 " ---------------------
 " KEY MAPPINGS 
