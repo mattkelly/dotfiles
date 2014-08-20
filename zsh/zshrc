@@ -42,6 +42,9 @@ alias rd='rmdir'
 
 alias grep='grep COLOR'
 
+# Ignore whitespace in vimdiff
+alias vimdiffws="vimdiff -c 'set diffopt+=iwhite'"
+
 # ---------------------------
 # History
 # ---------------------------
