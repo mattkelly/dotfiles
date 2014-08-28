@@ -97,6 +97,11 @@ alias grep='grep --color'
 # Ignore whitespcae in vimdiff
 alias vimdiffws="vimdiff -c 'set diffopt+=iwhite'"
 
+# Poor man's tree command
+function lst () {
+    ls -R "$1" | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/';
+}
+
 # ---------------------------
 # History
 # ---------------------------
