@@ -98,8 +98,17 @@ alias grep='grep --color'
 alias vimdiffws="vimdiff -c 'set diffopt+=iwhite'"
 
 # Poor man's tree command
-function lst () {
-    ls -R "$1" | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/';
+function lst () 
+{
+    if [ ! -z "$1" ]; then
+        ls -R "$1"  \
+        | grep ":$" \
+        | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/';
+    else
+        ls -R       \
+        | grep ":$" \
+        | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/';
+    fi
 }
 
 # ---------------------------
@@ -117,7 +126,6 @@ PS1="\[$IRed\]\u\[$White\]@\[$Green\]\h \[$Yellow\]\w \[$White\]# "
 # ---------------------------
 # Environment variables
 # ---------------------------
-# TODO move these to zprofile
 export EDITOR='vim'
 export VISUAL='vim'
 
