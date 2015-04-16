@@ -84,3 +84,6 @@ set splitright
      silent execute "!diff -a --binary " . opt .
        \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
   endfunction
+
+" Toggle paste mode using F2 key
+set pastetoggle=<F2>
