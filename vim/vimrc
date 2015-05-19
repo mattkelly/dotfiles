@@ -87,3 +87,9 @@ set splitright
 
 " Toggle paste mode using F2 key
 set pastetoggle=<F2>
+
+" Fix split sizes after terminal resized
+augroup Misc
+autocmd!
+    autocmd VimResized * exe "normal! \<c-w>="
+augroup END
