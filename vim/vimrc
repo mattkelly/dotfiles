@@ -14,7 +14,7 @@ endif
 set nocompatible
 
 " ---------------------
-" WHITESPACe 
+" WHITESPACE
 " ---------------------
 
 " Expand all tabs to spaces
