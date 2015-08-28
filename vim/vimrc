@@ -96,3 +96,10 @@ augroup Misc
 autocmd!
     autocmd VimResized * exe "normal! \<c-w>="
 augroup END
+
+" Fix vim contents persisting on screen after close
+" Behavior seen in OSX Terminal app
+if &term =~ "ansi"
+  let &t_ti = "\<Esc>[?47h"                                                                                                                                        
+  let &t_te = "\<Esc>[?47l"
+endif
