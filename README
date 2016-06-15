@@ -3,8 +3,8 @@ out something smarter.
 
 To get single files manually:
 
-wget https://github.com/mattkelly/dotfiles/raw/master/FILENAME
+wget https://raw.githubusercontent.com/mattkelly/dotfiles/master/PATH_TO_FILE
 
 e.g. to get my vimrc:
 
-wget https://github.com/mattkelly/dotfiles/raw/master/vim/vimrc
+wget https://raw.githubusercontent.com/mattkelly/dotfiles/master/vim/vimrc
