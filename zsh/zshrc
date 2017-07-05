@@ -1,4 +1,18 @@
 # ---------------------------
+# Antigen
+# ---------------------------
+source /usr/local/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle joel-porquet/zsh-dircolors-solarized
+antigen bundle nojhan/liquidprompt
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
+# ---------------------------
 # Global aliases
 # ---------------------------
 alias -g '...'='../..'
@@ -8,7 +22,7 @@ alias -g 'COLOR'='--color=auto'
 # Command aliases
 # ---------------------------
 case $(uname -s) in
-    Linux)    
+    Linux)
         alias l='ls -F COLOR'
         alias ls='ls -F COLOR'
         alias ll='ls -lF COLOR'
@@ -41,27 +55,49 @@ alias md='mkdir'
 alias rd='rmdir'
 
 alias grep='grep COLOR'
+alias egrep='egrep COLOR'
 
-# Ignore whitespace in vimdiff
-alias vimdiffws="vimdiff -c 'set diffopt+=iwhite'"
+alias gs='git status'
+alias gn='git-num'
+alias gg='git grep -I'
+alias gco='git checkout'
+alias gl='git log'
+alias gd='git diff'
+
+alias f="find . -iname"
+
+alias i="invoke"
+
+alias stamp="ts '[%H:%M:%S]'"
+
+# Use neovim!
+#alias vim='nvim'
+#alias v='nvim'
+#alias vimdiff='nvim -d'
+#alias vd='nvim -d'
+
 
 # ---------------------------
 # History
 # ---------------------------
 HISTFILE=~/.zsh_history
-HISTSIZE=4096
-SAVEHIST=4096
+HISTSIZE=1000000
+SAVEHIST=1000000
 # Multiple zsh instances share history file
 setopt append_history
 # Don't save history for immediately repeated commands
-setopt histignoredups
+#setopt hist_ignore_dups
+# Don't save any duplicate commands at all
+setopt hist_ignore_all_dups
+# Commands preceded with a space won't be saved
+setopt hist_ignore_space
 
 # ---------------------------
-# Miscellaneous options 
+# Miscellaneous options
 # ---------------------------
 # Automatically cd to dir given on command line, e.g. % /etc
-setopt autocd 
-setopt extendedglob 
+setopt autocd
+setopt extendedglob
 setopt notify
 # Tab completion from both ends
 setopt completeinword
@@ -71,11 +107,11 @@ unsetopt beep
 # Better completion for killall
 zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
-# Emacs keybindings, to be closer to bash 
+# Emacs keybindings, to be closer to bash
 bindkey -e
 
-# Display CPU usage stats for commands taking more than 10 seconds
-REPORTTIME=10
+# Display CPU usage stats for commands taking more than N seconds
+REPORTTIME=5
 
 # ---------------------------
 # Prompt
@@ -84,16 +120,15 @@ autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
 # ---------------------------
-# Environment variables
+# Functions
 # ---------------------------
-# TODO move these to zprofile
-export EDITOR='vim'
-export VISUAL='vim'
+
+hist_most () {
+  fc -il 1 | awk '{print $4}' | sort | uniq -c | sort -rn | head -${1:=10}
+}
 
 # ---------------------------
-# ls colors
+# fzf
 # ---------------------------
-if [[ -x "`whence -p dircolors`" ]]; then
-  eval `dircolors`
-fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
