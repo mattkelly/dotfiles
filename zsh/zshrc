@@ -120,14 +120,6 @@ autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
 
 # ---------------------------
-# Functions
-# ---------------------------
-
-hist_most () {
-  fc -il 1 | awk '{print $4}' | sort | uniq -c | sort -rn | head -${1:=10}
-}
-
-# ---------------------------
 # fzf
 # ---------------------------
 
