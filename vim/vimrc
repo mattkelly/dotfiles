@@ -39,13 +39,13 @@ call plug#end()
 
 " Expand all tabs to spaces
 set expandtab
-" Set tab width to 2
-set tabstop=2 " number of visual spaces per tab
-set softtabstop=2 " number of spaces in tab when editing
+" Set tab width
+set tabstop=4 " number of visual spaces per tab
+set softtabstop=4 " number of spaces in tab when editing
 " Expand all existing tab characters to spaces
 retab
 " Set number of spaces for indentation
-set shiftwidth=2
+set shiftwidth=4
 
 " Remove trailing whitespace on write
 "autocmd BufWritePre * :%s/\s\+$//e
