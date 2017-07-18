@@ -16,17 +16,20 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'altercation/vim-colors-solarized' " solarized color scheme
-Plug 'bogado/file-line'                 " Open file to line number number using <filename>:<linenumber>
-Plug 'chrisbra/vim-diff-enhanced'       " Git diffs in vim
-Plug 'ctrlpvim/ctrlp.vim'               " Fuzzy file, etc finder
-Plug 'godlygeek/tabular'                " Align stuff nicely
-Plug 'rizzatti/dash.vim'                " Dash for vim
-Plug 'scrooloose/nerdtree'              " File navigation
-Plug 'sjl/gundo.vim'                    " Visual undo (undo is a tree in vim, not a stack!)
-Plug 'tpope/vim-fugitive'               " Git stuff
-Plug 'vim-airline/vim-airline'          " Status / tabline
-Plug 'vim-airline/vim-airline-themes'   " The
+Plug 'altercation/vim-colors-solarized'       " solarized color scheme
+Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
+Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
+Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+Plug 'godlygeek/tabular'                      " Align stuff nicely
+Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
+Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
+Plug 'rizzatti/dash.vim'                      " Dash for vim
+Plug 'rust-lang/rust.vim'                     " Rust support
+Plug 'scrooloose/nerdtree'                    " File navigation
+Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
+Plug 'tpope/vim-fugitive'                     " Git stuff
+Plug 'vim-airline/vim-airline'                " Status / tabline
+Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 
 call plug#end()
 
