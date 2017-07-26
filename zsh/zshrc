@@ -63,6 +63,7 @@ alias gg='git grep -I'
 alias gco='git checkout'
 alias gl='git log'
 alias gd='git diff'
+alias gds='git diff --staged'
 
 alias f="find . -iname"
 
