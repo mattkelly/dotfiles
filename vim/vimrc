@@ -30,8 +30,15 @@ Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in v
 Plug 'tpope/vim-fugitive'                     " Git stuff
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
+Plug 'vim-scripts/cscope.vim'                 " cscope
 
 call plug#end()
+
+" ---------------------
+" Leader
+" ---------------------
+" Set comma as the leader
+let mapleader=","
 
 " ---------------------
 " Whitespace
@@ -117,12 +124,6 @@ nnoremap j gj
 nnoremap k gk
 " Highlight last inserted text
 nnoremap gV `[v`]
-
-" ---------------------
-" Leader
-" ---------------------
-" Set comma as the leader
-let mapleader=","
 
 " ---------------------
 " CtrlP
