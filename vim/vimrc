@@ -28,6 +28,7 @@ Plug 'rust-lang/rust.vim'                     " Rust support
 Plug 'scrooloose/nerdtree'                    " File navigation
 Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
 Plug 'tpope/vim-fugitive'                     " Git stuff
+Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab based on file contents
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
