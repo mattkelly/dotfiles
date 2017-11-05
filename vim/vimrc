@@ -20,6 +20,7 @@ Plug 'altercation/vim-colors-solarized'       " solarized color scheme
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
 Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
