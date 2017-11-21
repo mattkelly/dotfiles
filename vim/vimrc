@@ -227,6 +227,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " --------------
+" go-vim
+" --------------
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+
+" --------------
 " Neovim
 " --------------
 " nvim incremental / live substitute
