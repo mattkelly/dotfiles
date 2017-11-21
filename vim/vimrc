@@ -155,6 +155,8 @@ set wildmenu
 set lazyredraw
 " Line number, displacement in status bar
 set ruler
+" Automatically save upon running e.g. :write, :GoBuild
+set autowrite
 
 " Jump to last position when reopening file
 if has("autocmd")
