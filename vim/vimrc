@@ -16,6 +16,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'Valloric/YouCompleteMe'                 " Code-completion engine
 Plug 'altercation/vim-colors-solarized'       " solarized color scheme
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
@@ -245,3 +246,14 @@ autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 if has('nvim')
   set inccommand=split
 endif
+
+" --------------
+" UltiSnips
+" --------------
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
