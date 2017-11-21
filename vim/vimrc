@@ -35,6 +35,10 @@ Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
 
+" Snippets
+Plug 'SirVer/ultisnips'                       " Snippet engine itself
+Plug 'honza/vim-snippets'                     " Actual snippets
+
 call plug#end()
 
 " ---------------------
