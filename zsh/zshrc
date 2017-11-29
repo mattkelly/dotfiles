@@ -71,6 +71,8 @@ alias i="invoke"
 
 alias stamp="ts '[%H:%M:%S]'"
 
+alias kc="kubectl"
+
 # Use neovim!
 #alias vim='nvim'
 #alias v='nvim'
