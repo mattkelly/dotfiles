@@ -28,6 +28,7 @@ Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
 Plug 'rizzatti/dash.vim'                      " Dash for vim
 Plug 'rust-lang/rust.vim'                     " Rust support
+Plug 'scrooloose/nerdcommenter'               " Commenting
 Plug 'scrooloose/nerdtree'                    " File navigation
 Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
 Plug 'tpope/vim-fugitive'                     " Git stuff
