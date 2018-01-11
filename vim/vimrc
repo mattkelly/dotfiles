@@ -25,6 +25,7 @@ Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
+Plug 'nathanaelkane/vim-indent-guides'        " Indentation guides
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
 Plug 'rizzatti/dash.vim'                      " Dash for vim
 Plug 'rust-lang/rust.vim'                     " Rust support
