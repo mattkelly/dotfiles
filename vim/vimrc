@@ -37,6 +37,7 @@ Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab ba
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
+Plug 'ekalinin/Dockerfile.vim'                " Syntax for Dockerfiles
 
 " Snippets
 Plug 'SirVer/ultisnips'                       " Snippet engine itself
