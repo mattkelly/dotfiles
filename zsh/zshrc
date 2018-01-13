@@ -6,7 +6,6 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle joel-porquet/zsh-dircolors-solarized
-antigen bundle nojhan/liquidprompt
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -131,7 +130,14 @@ hist_most () {
 }
 
 # ---------------------------
+# prezto
+# ---------------------------
+# use zpreztorc to customize zprezto
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+# ---------------------------
 # fzf
 # ---------------------------
-
+# must come after prezto
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
