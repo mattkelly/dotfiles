@@ -237,12 +237,22 @@ let g:airline#extensions#tabline#fnamemod=":t"
 let g:airline_theme="solarized"
 
 " --------------
-" go-vim
+" vim-go
 " --------------
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+
+" More syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
 
 " --------------
 " Neovim
