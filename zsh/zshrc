@@ -3,7 +3,8 @@
 # ---------------------------
 source /usr/local/share/antigen/antigen.zsh
 
-antigen use oh-my-zsh
+# TODO do this?
+#antigen use prezto
 
 antigen bundle joel-porquet/zsh-dircolors-solarized
 antigen bundle zsh-users/zsh-completions
