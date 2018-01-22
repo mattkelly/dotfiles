@@ -62,6 +62,7 @@ alias gn='git-num'
 alias gg='git grep -I'
 alias gco='git checkout'
 alias gl='git log'
+alias gls='git log --show-signature'
 alias gd='git diff'
 alias gds='git diff --staged'
 
