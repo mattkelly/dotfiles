@@ -57,6 +57,7 @@ alias rd='rmdir'
 alias grep='grep COLOR'
 alias egrep='egrep COLOR'
 
+# git
 alias gs='git status'
 alias gn='git-num'
 alias gg='git grep -I'
@@ -65,6 +66,10 @@ alias gl='git log'
 alias gls='git log --show-signature'
 alias gd='git diff'
 alias gds='git diff --staged'
+
+# docker
+alias dps="docker ps"
+alias di="docker images"
 
 alias f="find . -iname"
 
