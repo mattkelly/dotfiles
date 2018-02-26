@@ -37,6 +37,7 @@ Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
 Plug 'ekalinin/Dockerfile.vim'                " Syntax for Dockerfiles
+Plug 'tell-k/vim-autopep8'                    " Automatically apply pep8 to python files
 
 " Snippets
 Plug 'SirVer/ultisnips'                       " Snippet engine itself
