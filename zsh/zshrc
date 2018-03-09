@@ -66,6 +66,7 @@ alias gl='git log'
 alias gls='git log --show-signature'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gt='git tree' # https://github.com/knugie/git-status-tree
 
 # docker
 alias dps="docker ps"
