@@ -206,6 +206,9 @@ if &term =~ "ansi"
   let &t_te = "\<Esc>[?47l"
 endif
 
+set maxmempattern=2048
+
+
 " --------------
 " ctags
 " --------------
