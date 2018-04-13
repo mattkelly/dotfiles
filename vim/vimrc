@@ -21,23 +21,24 @@ Plug 'bogado/file-line'                       " Open to line num using <filename
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
 Plug 'christoomey/vim-tmux-navigator'         " Seamless vim and tmux
 Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+Plug 'ekalinin/Dockerfile.vim'                " Syntax for Dockerfiles
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
 Plug 'nathanaelkane/vim-indent-guides'        " Indentation guides
+Plug 'ntpeters/vim-better-whitespace'         " Highlight trailing whitespace
 Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
 Plug 'rizzatti/dash.vim'                      " Dash for vim
 Plug 'rust-lang/rust.vim'                     " Rust support
 Plug 'scrooloose/nerdcommenter'               " Commenting
 Plug 'scrooloose/nerdtree'                    " File navigation
 Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
+Plug 'tell-k/vim-autopep8'                    " Automatically apply pep8 to python files
 Plug 'tpope/vim-fugitive'                     " Git stuff
 Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab based on file contents
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
-Plug 'ekalinin/Dockerfile.vim'                " Syntax for Dockerfiles
-Plug 'tell-k/vim-autopep8'                    " Automatically apply pep8 to python files
 
 " Snippets
 Plug 'SirVer/ultisnips'                       " Snippet engine itself
