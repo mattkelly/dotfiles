@@ -66,6 +66,10 @@ alias gl='git log'
 alias gls='git log --show-signature'
 alias gd='git diff'
 alias gds='git diff --staged'
+alias gpum='git pull upstream master'
+alias gpom='git push origin master'
+alias gpud='git pull upstream development'
+alias gpod='git push origin development'
 alias gt='git tree' # https://github.com/knugie/git-status-tree
 
 # docker
@@ -79,6 +83,10 @@ alias i="invoke"
 alias stamp="ts '[%H:%M:%S]'"
 
 alias kc="kubectl"
+
+alias total="awk \'{s+=$1} END {print s}\'"
+
+alias rg="rg --glob '!vendor'"
 
 # Use neovim!
 #alias vim='nvim'
