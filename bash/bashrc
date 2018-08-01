@@ -128,4 +128,3 @@ PS1="\[$IRed\]\u\[$White\]@\[$Green\]\h \[$Yellow\]\w \[$White\]# "
 # ---------------------------
 export EDITOR='vim'
 export VISUAL='vim'
-
