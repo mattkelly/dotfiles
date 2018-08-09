@@ -16,6 +16,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'airblade/vim-gitgutter'                 " Show git diff in the gutter (side column)
 Plug 'altercation/vim-colors-solarized'       " solarized color scheme
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
