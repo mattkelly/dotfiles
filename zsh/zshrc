@@ -72,27 +72,27 @@ alias gpud='git pull upstream development'
 alias gpod='git push origin development'
 alias gt='git tree' # https://github.com/knugie/git-status-tree
 
-# docker
+# Docker
 alias dps="docker ps"
 alias di="docker images"
 
-alias f="find . -iname"
-
-alias i="invoke"
-
-alias stamp="ts '[%H:%M:%S]'"
-
+# Kubernetes
 alias kc="kubectl"
 
+# Misc
+alias f="find . -iname"
+alias rg="rg --glob '!vendor'"
+alias i="invoke"
+
+# util
+alias stamp="ts '[%H:%M:%S]'"
 alias total="awk \'{s+=$1} END {print s}\'"
 
-alias rg="rg --glob '!vendor'"
-
 # Use neovim!
-#alias vim='nvim'
-#alias v='nvim'
-#alias vimdiff='nvim -d'
-#alias vd='nvim -d'
+alias vim='nvim'
+alias v='nvim'
+alias vimdiff='nvim -d'
+alias vd='nvim -d'
 
 
 # ---------------------------
@@ -132,15 +132,8 @@ bindkey -e
 REPORTTIME=5
 
 # ---------------------------
-# Prompt
-# ---------------------------
-autoload -U colors && colors
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-
-# ---------------------------
 # Functions
 # ---------------------------
-
 hist_most () {
   fc -il 1 | awk '{print $4}' | sort | uniq -c | sort -rn | head -${1:=10}
 }
@@ -156,3 +149,32 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # ---------------------------
 # must come after prezto
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ---------------------------
+# Prompt
+# ---------------------------
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  kubecontext   # Kubectl context section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+# go path stuff
+export GOPATH="$HOME/go"
+export PATH=$GOPATH/bin:$PATH
+export CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src
+
+export PATH="/usr/local/bin:$PATH"
