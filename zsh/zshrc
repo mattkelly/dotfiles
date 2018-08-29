@@ -3,8 +3,7 @@
 # ---------------------------
 source /usr/local/share/antigen/antigen.zsh
 
-# TODO do this?
-#antigen use prezto
+antigen use prezto
 
 antigen bundle joel-porquet/zsh-dircolors-solarized
 antigen bundle zsh-users/zsh-completions
@@ -94,7 +93,6 @@ alias v='nvim'
 alias vimdiff='nvim -d'
 alias vd='nvim -d'
 
-
 # ---------------------------
 # History
 # ---------------------------
@@ -113,7 +111,7 @@ setopt hist_ignore_space
 # ---------------------------
 # Miscellaneous options
 # ---------------------------
-# Automatically cd to dir given on command line, e.g. % /etc
+# Automatically cd to dir given on command line
 setopt autocd
 setopt extendedglob
 setopt notify
@@ -139,12 +137,6 @@ hist_most () {
 }
 
 # ---------------------------
-# prezto
-# ---------------------------
-# use zpreztorc to customize zprezto
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
-# ---------------------------
 # fzf
 # ---------------------------
 # must come after prezto
@@ -154,7 +146,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # Prompt
 # ---------------------------
 SPACESHIP_PROMPT_ORDER=(
-  time          # Time stampts section
+  time          # Time stamps section
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
@@ -178,3 +170,7 @@ export PATH=$GOPATH/bin:$PATH
 export CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src
 
 export PATH="/usr/local/bin:$PATH"
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship
