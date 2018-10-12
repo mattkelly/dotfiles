@@ -130,6 +130,12 @@ bindkey -e
 REPORTTIME=5
 
 # ---------------------------
+# Add more Emojis to your life
+# ---------------------------
+# Install with: pip install emoji-fzf
+alias emoj="emoji-fzf preview | fzf --preview 'emoji-fzf get --name {1}' | cut -d \" \" -f 1 | emoji-fzf get"
+
+# ---------------------------
 # Functions
 # ---------------------------
 hist_most () {
