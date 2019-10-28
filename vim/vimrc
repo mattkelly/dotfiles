@@ -41,6 +41,7 @@ Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab ba
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
+Plug 'chazy/cscope_maps'                      " cscope maps
 
 " Snippets
 "Plug 'SirVer/ultisnips'                       " Snippet engine itself
@@ -277,3 +278,6 @@ endif
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
+
+" Avoid message about adding cscope db every startup
+set nocscopeverbose
