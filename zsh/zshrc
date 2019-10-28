@@ -1,7 +1,7 @@
 # ---------------------------
 # Antigen
 # ---------------------------
-source /usr/local/share/antigen/antigen.zsh
+source $HOME/git/antigen/antigen.zsh
 
 antigen use prezto
 
