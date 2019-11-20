@@ -112,6 +112,9 @@ set spell
 
 " Make comment reflow and such play nice with Doxygen-style comments
 autocmd Filetype c,cpp set comments^=://!
+" When joining lines (e.g. J or a reflow), ensure there's only one space after
+" a period.
+set nojoinspaces
 
 " ---------------------
 " Searching
