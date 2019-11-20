@@ -73,7 +73,7 @@ set shiftwidth=4
 "autocmd BufWritePre * :%s/\s\+$//e
 
 " ---------------------
-" KEY MAPPINGS
+" Key Mappings
 " ---------------------
 
 " jj to Esc
@@ -84,7 +84,7 @@ cnoreabbrev W w
 cnoreabbrev Q q
 
 " ---------------------
-" SYNTAX HIGHLIGHTING
+" Syntax
 " ---------------------
 
 " Enable syntax highlighting
@@ -109,6 +109,9 @@ let &colorcolumn="80,".join(range(100,999),",")
 
 " Spell checking
 set spell
+
+" Make comment reflow and such play nice with Doxygen-style comments
+autocmd Filetype c,cpp set comments^=://!
 
 " ---------------------
 " Searching
