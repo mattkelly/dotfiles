@@ -1,0 +1,9 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = ../../anishathalye/dotbot.git
+[submodule "third-party/cyrus-gdb-dashboard"]
+	path = third-party/cyrus-gdb-dashboard
+	url = ../../cyrus-and/gdb-dashboard.git
+[submodule "third-party/tromey-gdb-helpers"]
+	path = third-party/tromey-gdb-helpers
+	url = ../../tromey/gdb-helpers.git
