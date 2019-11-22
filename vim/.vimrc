@@ -45,10 +45,6 @@ Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
 Plug 'mzlogin/vim-markdown-toc'		          " Markdown table of contents generator
 
-" Snippets
-"Plug 'SirVer/ultisnips'                       " Snippet engine itself
-"Plug 'honza/vim-snippets'                     " Actual snippets
-
 call plug#end()
 
 " ---------------------
@@ -60,7 +56,6 @@ let mapleader=","
 " ---------------------
 " Whitespace
 " ---------------------
-
 " Expand all tabs to spaces
 set expandtab
 " Set tab width
@@ -72,12 +67,11 @@ retab
 set shiftwidth=4
 
 " Remove trailing whitespace on write
-"autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " ---------------------
 " Key Mappings
 " ---------------------
-
 " jj to Esc
 imap jj <Esc>
 " :W<CR> to :w<CR> since I can't seem to hit :w accurately
@@ -88,7 +82,6 @@ cnoreabbrev Q q
 " ---------------------
 " Syntax
 " ---------------------
-
 " Enable syntax highlighting
 if has("syntax")
   syntax enable
@@ -121,7 +114,6 @@ set nojoinspaces
 " ---------------------
 " Searching
 " ---------------------
-
 " Highlight matches in search
 set hlsearch
 " Turn off search highlight
@@ -130,7 +122,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 " ---------------------
 " Folding
 " ---------------------
-
 " Enable folding
 set foldenable
 " Open most folds by default
@@ -141,7 +132,6 @@ set foldmethod=syntax
 " ---------------------
 " Movement
 " ---------------------
-
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -218,7 +208,6 @@ endif
 
 set maxmempattern=2048
 
-
 " --------------
 " ctags
 " --------------
@@ -277,15 +266,12 @@ if has('nvim')
 endif
 
 " --------------
-" UltiSnips
+" Markdown
 " --------------
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
+" Use '-' instead of '*' for markdown TOC leader
+let g:vmt_list_item_char = '-'
+" Indent by two spaces per level
+let g:vmt_list_indent_text = '  '
 
 " Avoid message about adding cscope db every startup
 set nocscopeverbose
