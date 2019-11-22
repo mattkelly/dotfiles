@@ -19,12 +19,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'                 " Show git diff in the gutter (side column)
 Plug 'altercation/vim-colors-solarized'       " solarized color scheme
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
+Plug 'chazy/cscope_maps'                      " cscope maps
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
 Plug 'christoomey/vim-tmux-navigator'         " Seamless vim and tmux
 Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
+Plug 'kmARC/vim-fubitive'                     " Bitbucket integration for vim-fugitive (fork that actually works)
 Plug 'moll/vim-node'                          " Node development
 Plug 'nathanaelkane/vim-indent-guides'        " Indentation guides
 Plug 'ntpeters/vim-better-whitespace'         " Highlight trailing whitespace
@@ -41,7 +43,7 @@ Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab ba
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
-Plug 'chazy/cscope_maps'                      " cscope maps
+Plug 'mzlogin/vim-markdown-toc'		          " Markdown table of contents generator
 
 " Snippets
 "Plug 'SirVer/ultisnips'                       " Snippet engine itself
@@ -287,3 +289,5 @@ endif
 
 " Avoid message about adding cscope db every startup
 set nocscopeverbose
+" Automatically prepend prefix to db entries to allow use from any dir
+set cscoperelative
