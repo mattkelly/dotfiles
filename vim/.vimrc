@@ -247,6 +247,12 @@ autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 
+" --------------
+" rust.vim
+" --------------
+let g:rustfmt_autosave = 1
+let g:rust_clip_command = 'xclip -selection clipboard'
+
 " More syntax highlighting
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
