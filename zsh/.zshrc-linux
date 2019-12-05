@@ -1,0 +1,14 @@
+# Color
+alias -g 'COLOR'='--color=auto'
+
+# ls
+alias l='ls -F COLOR'
+alias ls='ls -F COLOR'
+alias ll='ls -lF COLOR'
+alias la='ls -laF COLOR'
+alias ltr='ls -ltrFh COLOR'
+alias lm='ls -alF COLOR'
+
+# Clipboard
+alias clip='xclip -sel clip'
+alias pclip='xclip -sel primary'

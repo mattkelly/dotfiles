@@ -11,8 +11,22 @@
 
     ~/.gdb-cyrus-dashboard: third-party/cyrus-gdb-dashboard/.gdbinit
     ~/.gdbinit: gdb/.gdbinit
+    ~/.tromey-gdb-helpers: third-party/tromey-gdb-helpers
 
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.tromey-gdb-helpers: third-party/tromey-gdb-helpers
+    ~/.tmux-linux.conf:
+        if: '[ `uname` = Linux ]'
+        path: tmux/.tmux-linux.conf
+    ~/.tmux-macos.conf:
+        if: '[ `uname` = Darwin ]'
+        path: tmux/.tmux-macos.conf
+
+
     ~/.zpreztorc: prezto/.zpreztorc
     ~/.zshrc: zsh/.zshrc
+    ~/.zshrc-linux:
+        if: '[ `uname` = Linux ]'
+        path: zsh/.zshrc-linux
+    ~/.zshrc-macos:
+        if: '[ `uname` = Darwin ]'
+        path: zsh/.zshrc-macos

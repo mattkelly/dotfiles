@@ -1,0 +1,7 @@
+# -G for color on macOS
+alias l='ls -FG'
+alias ls='ls -FG'
+alias ll='ls -l -FG'
+alias la='ls -la -FG'
+alias ltr='ls -ltrh -FG'
+alias lm='ls -al -FG'

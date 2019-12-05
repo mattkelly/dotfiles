@@ -12,34 +12,17 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # ---------------------------
-# Global aliases
-# ---------------------------
-alias -g '...'='../..'
-alias -g 'COLOR'='--color=auto'
-
-# ---------------------------
-# Command aliases
+# OS-specific settings
 # ---------------------------
 case $(uname -s) in
     Linux)
-        alias l='ls -F COLOR'
-        alias ls='ls -F COLOR'
-        alias ll='ls -lF COLOR'
-        alias la='ls -laF COLOR'
-        alias ltr='ls -ltrFh COLOR'
-        alias lm='ls -alF COLOR'
+      source ~/.zshrc-linux
     ;;
     Darwin)
-        # -G for color on OSX
-        alias l='ls -FG'
-        alias ls='ls -FG'
-        alias ll='ls -l -FG'
-        alias la='ls -la -FG'
-        alias ltr='ls -ltrh -FG'
-        alias lm='ls -al -FG'
+      source ~/.zshrc-macos
     ;;
     *)
-        # Leave aliases alone if OS is unknown
+      # ¯\_(ツ)_/¯
     ;;
 esac
 
@@ -53,8 +36,8 @@ alias h='history'
 alias md='mkdir'
 alias rd='rmdir'
 
-alias grep='grep COLOR'
-alias egrep='egrep COLOR'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
 
 # git
 alias gs='git status'
