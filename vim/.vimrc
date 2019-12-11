@@ -43,7 +43,8 @@ Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab ba
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
 Plug 'vim-scripts/cscope.vim'                 " cscope
-Plug 'mzlogin/vim-markdown-toc'		          " Markdown table of contents generator
+Plug 'mzlogin/vim-markdown-toc'               " Markdown table of contents generator
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine
 
 call plug#end()
 
@@ -283,3 +284,8 @@ let g:vmt_list_indent_text = '  '
 set nocscopeverbose
 " Automatically prepend prefix to db entries to allow use from any dir
 set cscoperelative
+
+" --------------
+" coc.nvim
+" --------------
+source ~/.vimrc-coc

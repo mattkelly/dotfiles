@@ -7,6 +7,8 @@
 
 - link:
     ~/.vimrc: vim/.vimrc
+    ~/.vimrc-coc: vim/.vimrc-coc
+
     ~/.config/nvim/init.vim: vim/nvim/init.vim
 
     ~/.gdb-cyrus-dashboard: third-party/cyrus-gdb-dashboard/.gdbinit
