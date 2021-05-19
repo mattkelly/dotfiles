@@ -13,7 +13,6 @@ zstyle ':prezto:load' pmodule \
     'homebrew' \
     'osx' \
     'syntax-highlighting' \
-    'contrib-prompt' \
     'prompt' # must be last
 
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
