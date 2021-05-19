@@ -26,6 +26,9 @@ case $(uname -s) in
     ;;
 esac
 
+eval "$(zoxide init zsh)"
+alias cd='z'
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -63,7 +66,7 @@ alias kc="kubectl"
 
 # Misc
 alias f="find . -iname"
-alias rg="rg --glob '!vendor'"
+alias rg="rg --hidden --glob '!vendor' --glob '!.git'"
 alias i="invoke"
 
 # util
@@ -75,6 +78,9 @@ alias vim='nvim'
 alias v='nvim'
 alias vimdiff='nvim -d'
 alias vd='nvim -d'
+
+# fd
+alias fd='fd -H'
 
 # ---------------------------
 # History
@@ -131,35 +137,9 @@ hist_most () {
 # must come after prezto
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ---------------------------
-# Prompt
-# ---------------------------
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  venv          # virtualenv section
-  conda         # conda virtualenv section
-  pyenv         # Pyenv section
-  kubecontext   # Kubectl context section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-
 # go path stuff
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 export CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src
 
 export PATH="/usr/local/bin:$PATH"
-
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
