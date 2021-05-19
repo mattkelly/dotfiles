@@ -22,7 +22,8 @@ Plug 'bogado/file-line'                       " Open to line num using <filename
 Plug 'chazy/cscope_maps'                      " cscope maps
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
 Plug 'christoomey/vim-tmux-navigator'         " Seamless vim and tmux
-Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+"Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+Plug 'junegunn/fzf'                           " Fuzzy file, etc finder
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
@@ -34,7 +35,7 @@ Plug 'othree/javascript-libraries-syntax.vim' " Syntax highlighting for js libs
 Plug 'rizzatti/dash.vim'                      " Dash for vim
 Plug 'rust-lang/rust.vim'                     " Rust support
 Plug 'scrooloose/nerdcommenter'               " Commenting
-Plug 'scrooloose/nerdtree'                    " File navigation
+"Plug 'scrooloose/nerdtree'                    " File navigation
 Plug 'sheerun/vim-polyglot'                   " Syntax for lots of languages
 Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
 Plug 'tell-k/vim-autopep8'                    " Automatically apply pep8 to python files
@@ -58,14 +59,19 @@ let mapleader=","
 " Whitespace
 " ---------------------
 " Expand all tabs to spaces
-set expandtab
+"set expandtab
 " Set tab width
-set tabstop=4 " number of visual spaces per tab
-set softtabstop=4 " number of spaces in tab when editing
+"set tabstop=4 " number of visual spaces per tab
+"set softtabstop=4 " number of spaces in tab when editing
 " Expand all existing tab characters to spaces
-retab
+"retab
 " Set number of spaces for indentation
-set shiftwidth=4
+"set shiftwidth=4
+
+"augroup filetype_c
+    "autocmd!
+    ":autocmd FileType c setlocal tabstop=2 shiftwidth=2 softtabstop=2
+"augroup end
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//e
@@ -148,6 +154,18 @@ if executable('rg')
 endif
 
 set wildignore+=*/.git/*,*/tmp/*,*.swp
+
+" ---------------------
+" fzf
+" ---------------------
+command! FZFMru call fzf#run({
+\  'source':  v:oldfiles,
+\  'sink':    'e',
+\  'options': '-m -x +s',
+\  'down':    '40%'})
+
+nmap <C-P> :FZF<CR>
+nmap <C-B> :FZFMru<CR>
 
 " ---------------------
 " Other
@@ -289,3 +307,18 @@ set cscoperelative
 " coc.nvim
 " --------------
 source ~/.vimrc-coc
+
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+        execute t:zoom_winrestcmd
+        let t:zoomed = 0
+    else
+        let t:zoom_winrestcmd = winrestcmd()
+        resize
+        vertical resize
+        let t:zoomed = 1
+    endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <leader>z :ZoomToggle<CR>
