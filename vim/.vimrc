@@ -17,12 +17,12 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'                 " Show git diff in the gutter (side column)
-Plug 'altercation/vim-colors-solarized'       " solarized color scheme
+Plug 'ericbn/vim-solarized'                   " solarized color scheme
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
 Plug 'chazy/cscope_maps'                      " cscope maps
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
 Plug 'christoomey/vim-tmux-navigator'         " Seamless vim and tmux
-"Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
+Plug 'ctrlpvim/ctrlp.vim'                     " Fuzzy file, etc finder
 Plug 'junegunn/fzf'                           " Fuzzy file, etc finder
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
@@ -40,12 +40,13 @@ Plug 'sheerun/vim-polyglot'                   " Syntax for lots of languages
 Plug 'sjl/gundo.vim'                          " Visual undo (undo is a tree in vim, not a stack!)
 Plug 'tell-k/vim-autopep8'                    " Automatically apply pep8 to python files
 Plug 'tpope/vim-fugitive'                     " Git stuff
+Plug 'tpope/vim-rhubarb'                      " GitHub stuff
 Plug 'tpope/vim-sleuth'                       " Auto shiftwidth and expandtab based on file contents
 Plug 'vim-airline/vim-airline'                " Status / tabline
 Plug 'vim-airline/vim-airline-themes'         " Themes for airline
-Plug 'vim-scripts/cscope.vim'                 " cscope
+"Plug 'vim-scripts/cscope.vim'                 " cscope
 Plug 'mzlogin/vim-markdown-toc'               " Markdown table of contents generator
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine
+"Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine
 
 call plug#end()
 
@@ -97,14 +98,18 @@ endif
 au BufNewFile,BufRead *.ejs set filetype=html
 " Set gradle file syntax highlighting to groovy format
 au BufNewFile,BufRead *.gradle set filetype=groovy
+" scons = python
+au BufRead,BufNewFile SConstruct set filetype=python
+au BufRead,BufNewFile *.scons set filetype=python
+
 " Show matching brackets
 set showmatch
 
 match Type /\w*_t[ ;,]/
 
-"let g:solarized_termcolors=256
-colorscheme solarized
 set background=dark
+colorscheme solarized
+set termguicolors
 
 "highlight ColorColumn ctermbg=200 guibg=#2c2d27
 let &colorcolumn="80,".join(range(100,999),",")
@@ -244,7 +249,7 @@ let g:ctrlp_custom_ignore = {
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version
 " control. It also supports works with .svn, .hg, .bzr.
-"let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 'r'
 
 " --------------
 " Airline
@@ -299,14 +304,14 @@ let g:vmt_list_item_char = '-'
 let g:vmt_list_indent_text = '  '
 
 " Avoid message about adding cscope db every startup
-set nocscopeverbose
+"set nocscopeverbose
 " Automatically prepend prefix to db entries to allow use from any dir
-set cscoperelative
+"set cscoperelative
 
 " --------------
 " coc.nvim
 " --------------
-source ~/.vimrc-coc
+"source ~/.vimrc-coc
 
 " Zoom / Restore window.
 function! s:ZoomToggle() abort
