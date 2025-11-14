@@ -26,6 +26,7 @@
 
     ~/.zshrc: zsh/.zshrc
     ~/.zsh_plugins.txt: zsh/.zsh_plugins.txt
+    ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.zshrc-linux:
         if: '[ `uname` = Linux ]'
         path: zsh/.zshrc-linux
