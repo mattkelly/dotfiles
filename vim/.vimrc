@@ -17,7 +17,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'                 " Show git diff in the gutter (side column)
-Plug 'ericbn/vim-solarized'                   " solarized color scheme
+"Plug 'ericbn/vim-solarized'                   " solarized color scheme
+Plug 'neanias/everforest-nvim', { 'branch': 'main' }
 Plug 'bogado/file-line'                       " Open to line num using <filename>:<linenumber>
 Plug 'chazy/cscope_maps'                      " cscope maps
 Plug 'chrisbra/vim-diff-enhanced'             " Git diffs in vim
@@ -108,7 +109,7 @@ set showmatch
 match Type /\w*_t[ ;,]/
 
 set background=dark
-colorscheme solarized
+colorscheme everforest
 set termguicolors
 
 "highlight ColorColumn ctermbg=200 guibg=#2c2d27
