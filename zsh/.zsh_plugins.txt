@@ -1,0 +1,5 @@
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zdharma-continuum/fast-syntax-highlighting
+joel-porquet/zsh-dircolors-solarized
+romkatv/powerlevel10k

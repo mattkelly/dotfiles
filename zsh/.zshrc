@@ -1,15 +1,8 @@
 # ---------------------------
-# Antigen
+# antidote
 # ---------------------------
-source $HOME/git/antigen/antigen.zsh
-
-antigen use prezto
-
-antigen bundle joel-porquet/zsh-dircolors-solarized
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
+source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+antidote load ~/.zsh_plugins.txt
 
 # ---------------------------
 # OS-specific settings
@@ -21,13 +14,12 @@ case $(uname -s) in
     Darwin)
       source ~/.zshrc-macos
     ;;
-    *)
-      # ¯\_(ツ)_/¯
-    ;;
 esac
 
-eval "$(zoxide init zsh)"
-alias cd='z'
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+    alias cd='z'
+fi
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -134,10 +126,9 @@ hist_most () {
 # ---------------------------
 # fzf
 # ---------------------------
-# must come after prezto
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# go path stuff
+# path stuff
 export GOPATH="$HOME/go"
 export PATH=$GOPATH/bin:$PATH
 export CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src

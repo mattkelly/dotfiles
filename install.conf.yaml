@@ -24,8 +24,8 @@
         path: tmux/.tmux-macos.conf
 
 
-    ~/.zpreztorc: prezto/.zpreztorc
     ~/.zshrc: zsh/.zshrc
+    ~/.zsh_plugins.txt: zsh/.zsh_plugins.txt
     ~/.zshrc-linux:
         if: '[ `uname` = Linux ]'
         path: zsh/.zshrc-linux
