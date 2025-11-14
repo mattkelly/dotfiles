@@ -11,6 +11,8 @@
 
     ~/.config/nvim/init.vim: vim/nvim/init.vim
 
+    ~/.config/kitty/kitty.conf: kitty/kitty.conf
+
     ~/.gdb-cyrus-dashboard: third-party/cyrus-gdb-dashboard/.gdbinit
     ~/.gdbinit: gdb/.gdbinit
     ~/.tromey-gdb-helpers: third-party/tromey-gdb-helpers
