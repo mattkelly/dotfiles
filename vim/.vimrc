@@ -214,9 +214,6 @@ set splitright
        \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
   endfunction
 
-" Toggle paste mode using F2 key
-set pastetoggle=<F2>
-
 " Fix split sizes after terminal resized
 augroup Misc
 autocmd!
