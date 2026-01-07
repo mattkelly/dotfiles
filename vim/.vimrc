@@ -28,7 +28,6 @@ Plug 'junegunn/fzf'                           " Fuzzy file, etc finder
 Plug 'fatih/vim-go'                           " golang development
 Plug 'godlygeek/tabular'                      " Align stuff nicely
 Plug 'kern/vim-es7'                           " ES6 + ES7 syntax
-Plug 'kmARC/vim-fubitive'                     " Bitbucket integration for vim-fugitive (fork that actually works)
 Plug 'moll/vim-node'                          " Node development
 Plug 'nathanaelkane/vim-indent-guides'        " Indentation guides
 Plug 'ntpeters/vim-better-whitespace'         " Highlight trailing whitespace
