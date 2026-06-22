@@ -166,3 +166,4 @@ hist_most () {
   fc -il 1 | awk '{print $4}' | sort | uniq -c | sort -rn | head -${1:=10}
 }
 
+eval "$(direnv hook zsh)"
