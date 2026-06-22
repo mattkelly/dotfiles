@@ -27,10 +27,19 @@ esac
 
 
 ########################################
+# Java
+########################################
+export JAVA_HOME="/opt/homebrew/opt/openjdk@25"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+
+########################################
 # Environment / Paths
 ########################################
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:/usr/local/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Helpful CDPATH (optional)
 export CDPATH=".:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src"
