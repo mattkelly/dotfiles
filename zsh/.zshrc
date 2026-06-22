@@ -74,6 +74,24 @@ setopt hist_reduce_blanks   # tidy formatting
 ########################################
 bindkey -e   # Emacs keybindings (bash-like)
 
+# Strip leading whitespace from pasted content as it lands in the buffer.
+# Pasted commands (e.g. from Claude Code) often arrive with a leading space,
+# which hist_ignore_space would silently drop from history. Trimming at paste
+# time means you see the clean command before hitting Enter.
+# Typed leading spaces are unaffected — intentional "skip history" still works.
+function _bracketed_paste_trim() {
+  local before=$CURSOR
+  zle .bracketed-paste
+  local head="${BUFFER:0:$before}"
+  local pasted="${BUFFER:$before:$(($CURSOR - $before))}"
+  local tail="${BUFFER:$CURSOR}"
+  local trimmed="${pasted#"${pasted%%[! ]*}"}"
+  BUFFER="${head}${trimmed}${tail}"
+  CURSOR=$(($before + ${#trimmed}))
+}
+zle -N bracketed-paste _bracketed_paste_trim
+bindkey '^M' accept-line  # ensure Enter is never bound to a stale custom widget
+
 
 ########################################
 # FZF integration
